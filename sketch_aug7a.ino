@@ -5,8 +5,8 @@
 #define PIR_PIN 27         // PIR sensor pin
 
 
-const char* WIFI_NAME = "realme 14 Pro lite 5G (128)";
-const char* WIFI_PASSWORD = "z63ajyfu";
+const char* WIFI_NAME = "your wifi ssid";
+const char* WIFI_PASSWORD = "password";
 
 // Master's MAC address
 uint8_t masterAddress[] = { 0x00, 0x4B, 0x12, 0x33, 0x7E, 0x00 };
