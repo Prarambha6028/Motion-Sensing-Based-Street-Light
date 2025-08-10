@@ -13,8 +13,8 @@
 #define ldrpin  36   // LDR sensor pin (digital output)
 
 
-const char* WIFI_NAME = "realme 14 Pro lite 5G (128)";
-const char* WIFI_PASSWORD = "z63ajyfu";
+const char* WIFI_NAME = "your wifi ssid";
+const char* WIFI_PASSWORD = "wifi password";
 
 
 uint8_t SlaveAddress[6] = {0x14, 0x33, 0x5C, 0x04, 0x4A, 0xFC}; //Store MAC Address(helps to knows which esp to send/receive data to)
