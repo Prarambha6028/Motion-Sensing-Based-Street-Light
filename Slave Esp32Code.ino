@@ -84,64 +84,6 @@ void loop() {
 
   delay(20); // Light loop
 }
-/*#include <WiFi.h>
-#include <esp_now.h>
-
-#define PIR_PIN       27
-#define STATUS_LED    2
-
-const char* WIFI_NAME = "realme 14 Pro lite 5G (128)";
-const char* WIFI_PASSWORD = "z63ajyfu";
-
-uint8_t masterAddress[] = { 0x14, 0x33, 0x5C, 0x04, 0x4A, 0xFC };
-
-typedef struct struct_message {
-  char msbsl[16];
-} struct_message;
-
-struct_message myData;
-bool lastPIR = false;
-unsigned long ledStart = 0;
-bool ledActive = false;
-
-void setup() {
-  Serial.begin(115200);
-  pinMode(PIR_PIN, INPUT);
-  pinMode(STATUS_LED, OUTPUT);
-
-  WiFi.begin(WIFI_NAME, WIFI_PASSWORD);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-  Serial.println("\n[Slave] WiFi connected");
-
-  WiFi.mode(WIFI_STA);
-  if (esp_now_init() != ESP_OK) {
-    Serial.println("ESP-NOW init failed");
-    ESP.restart();
-  }
-
-  esp_now_peer_info_t peerInfo = {};
-  memcpy(peerInfo.peer_addr, masterAddress, 6);
-  peerInfo.channel = WiFi.channel();
-  peerInfo.encrypt = false;
-  if (esp_now_add_peer(&peerInfo) != ESP_OK) {
-    Serial.println("[Slave] Failed to add master");
-  }
-
-  Serial.println("[Slave] ESP-NOW ready");
-}
-
-void loop() {
-  bool pir = digitalRead(PIR_PIN);
-
-  if (pir && !lastPIR) {
-    Serial.println("[Slave] PIR motion detected");
-
-    digitalWrite(STATUS_LED, HIGH);
-    ledStart = millis();
-    ledActive = true;
 
     strcpy(myData.msbsl, "MOTION");
     esp_err_t result = esp_now_send(masterAddress, (uint8_t *)&myData, sizeof(myData));
@@ -156,4 +98,4 @@ void loop() {
 
   delay(20);
 }
-*/
+
